@@ -1,0 +1,30 @@
+{
+  "name": "@umm/firebase_",
+  "version": "4.1.0",
+  "description": "Firebase Unity SDK / Core",
+  "homepage": "https://github.com/umm-projects/firebase_core",
+  "bugs": {
+    "url": "https://github.com/umm-projects/firebase_core/issues"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "postuninstall": "node scripts/postuninstall.js",
+    "build:test": "tar -tf $(npm pack -s) && $(npm bin)/rimraf $_"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:umm-projects/firebase_core"
+  },
+  "files": [
+    "Assets",
+    "scripts"
+  ],
+  "dependencies": {
+    "glob": "^7.1.2",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.1"
+  },
+  "devDependencies": {}
+}
