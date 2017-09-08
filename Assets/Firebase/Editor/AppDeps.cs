@@ -115,7 +115,7 @@ public class FirebaseAppDeps : AssetPostprocessor
                 },
                 { "repositories",
                     new string[] {
-                        "Assets/Firebase/m2repository"
+                        "Assets/Modules/umm@firebase_core/Firebase/m2repository"
                     }
                 }
             });
