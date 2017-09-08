@@ -1,4 +1,4 @@
-Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.45.0.dll
-Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.45.0.dll
-Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll
-Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.45.0.dll
+Assets/Modules/umm@firebase_core/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.45.0.dll
+Assets/Modules/umm@firebase_core/PlayServicesResolver/Editor/Google.JarResolver_v1.2.45.0.dll
+Assets/Modules/umm@firebase_core/PlayServicesResolver/Editor/Google.VersionHandler.dll
+Assets/Modules/umm@firebase_core/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.45.0.dll
