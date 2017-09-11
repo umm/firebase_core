@@ -1,6 +1,7 @@
 # What?
 
 * Firebase Unity SDK の共通モジュールです。
+* 利用している SDK のバージョンは v4.1.0 になります。
 
 # Install
 
