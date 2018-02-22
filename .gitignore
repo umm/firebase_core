@@ -6,6 +6,8 @@
 [Ll]ibrary/
 [Bb]uild/
 UnityGenerated/
+# Library should not freeze version, it should be written in README.
+/ProjectSettings/ProjectVersion.txt
 
 # ============= #
 # IDE generated #
