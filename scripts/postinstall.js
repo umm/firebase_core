@@ -2,6 +2,7 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var package = require('../package.json');
 var ncp = require('ncp').ncp;
+var mv = require('mv');
 
 var script_directory = __dirname;
 // パッケージ名が @ で始まるならスコープ有りと見なす
@@ -45,6 +46,30 @@ mkdirp(destination, function(err) {
         console.error(err);
         process.exit(1);
       }
+      // `Editor Default Resources/` は Assets/ 直下必須
+      mv(
+        path.resolve(script_directory, '../Assets/Editor Default Resources/Firebase'),
+        path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Editor Default Resources/Firebase'),
+        { mkdirp: true },
+        function(err) {
+          if (err) {
+            console.error(err);
+            process.exit(1);
+          }
+          // `Firebase/Editor/` 以下のファイルがパス固定で実行される
+          mv(
+            path.resolve(script_directory, '../Assets/Firebase/Editor'),
+            path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor'),
+            { mkdirp: true },
+            function(err) {
+              if (err) {
+                console.error(err);
+                process.exit(1);
+              }
+            }
+          )
+        }
+      )
     }
   );
 });
