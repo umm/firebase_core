@@ -38,8 +38,8 @@ sync(
       process.exit(1);
     }
     sync(
-      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/'),
-      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.exe'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.exe'),
       { remove_source: true },
       function(err) {
         if (err) {
@@ -49,8 +49,30 @@ sync(
       }
     );
     sync(
-      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor.meta'),
-      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor.meta'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.exe.meta'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.exe.meta'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.py'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.py'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.py.meta'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.py.meta'),
       { remove_source: true },
       function(err) {
         if (err) {
