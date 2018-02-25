@@ -2,7 +2,7 @@ var mkdirp = require('mkdirp');
 var path = require('path');
 var package = require('../package.json');
 var ncp = require('ncp').ncp;
-var mv = require('mv');
+var rimraf = require('rimraf');
 
 var script_directory = __dirname;
 // パッケージ名が @ で始まるならスコープ有りと見なす
@@ -28,48 +28,113 @@ if (/^@/.test(package.name)) {
 }
 
 // スクリプトの存在するディレクトリから見たパス
-var source = path.resolve(script_directory, '../Assets');
-var destination = path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name);
-
-// 宛先ディレクトリを作る (mkdir -p)
-mkdirp(destination, function(err) {
-  if (err) {
-    console.error(err);
-    process.exit(1);
+sync(
+  path.resolve(script_directory, '../Assets/'),
+  path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/'),
+  {},
+  function(err) {
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.exe'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.exe'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.exe.meta'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.exe.meta'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.py'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.py'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Firebase/Editor/generate_xml_from_google_services_json.py.meta'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor/generate_xml_from_google_services_json.py.meta'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Editor Default Resources/Firebase/'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Editor Default Resources/Firebase/'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
+    sync(
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Modules/' + package_name + '/Editor Default Resources/Firebase.meta'),
+      path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Editor Default Resources/Firebase.meta'),
+      { remove_source: true },
+      function(err) {
+        if (err) {
+          console.log(err);
+          process.exit(1);
+        }
+      }
+    );
   }
+);
 
-  ncp(
-    source,
-    destination,
+function sync(source, destination, options, callback) {
+  // 宛先ディレクトリを作る (mkdir -p)
+  mkdirp(
+    /\/$/.test(destination) ? destination : path.dirname(destination),
     function(err) {
       if (err) {
-        console.error(err);
-        process.exit(1);
+        callback(err);
       }
-      // `Editor Default Resources/` は Assets/ 直下必須
-      mv(
-        path.resolve(script_directory, '../Assets/Editor Default Resources/Firebase'),
-        path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Editor Default Resources/Firebase'),
-        { mkdirp: true },
+      // 再帰的にコピーする
+      ncp(
+        source,
+        destination,
         function(err) {
           if (err) {
-            console.error(err);
-            process.exit(1);
+            callback(err);
           }
-          // `Firebase/Editor/` 以下のファイルがパス固定で実行される
-          mv(
-            path.resolve(script_directory, '../Assets/Firebase/Editor'),
-            path.resolve(script_directory, (has_scope ? '../' : '') + '../../../Assets/Firebase/Editor'),
-            { mkdirp: true },
-            function(err) {
-              if (err) {
-                console.error(err);
-                process.exit(1);
+          // 元ディレクトリを削除する
+          if (options && options.remove_source) {
+            rimraf(
+              source,
+              function(err) {
+                callback(err);
               }
-            }
-          )
+            );
+          } else {
+            callback();
+          }
         }
-      )
+      );
     }
   );
-});
+};
