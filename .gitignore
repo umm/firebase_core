@@ -37,6 +37,9 @@ Assets/Plugins/Editor/JetBrains.meta
 # ======================= #
 node_modules/
 Assets/Modules*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # ============ #
 # OS generated #
