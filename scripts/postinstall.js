@@ -5,6 +5,7 @@ if (umm.libraries.info.development_install) {
   return;
 }
 
+// 配置ディレクトリに制約がある（Assets/ 直下限定）なアセット達を移動
 umm.libraries.synchronize(
   path.join(umm.libraries.info.base_path, 'Assets', 'Modules', umm.libraries.info.module_name),
   path.join(umm.libraries.info.base_path, 'Assets'),
