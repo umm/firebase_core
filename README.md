@@ -6,7 +6,7 @@
 ## Install
 
 ```shell
-npm install github:umm-projects/firebase_core
+yarn add "umm-projects/firebase_core#^1.0.0"
 ```
 
 ## Requirement
