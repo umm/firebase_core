@@ -3,8 +3,8 @@
 
 
 "@umm/scripts@umm-projects/scripts#^1.0.0":
-  version "1.0.1"
-  resolved "https://codeload.github.com/umm-projects/scripts/tar.gz/653ff5afe9e6cbbae5a7cca86a4b325c7ee4def9"
+  version "1.0.2"
+  resolved "https://codeload.github.com/umm-projects/scripts/tar.gz/0a51377bd1306bc1868be206e0777c58c5a60d17"
   dependencies:
     glob "^7.1.2"
     mkdirp "^0.5.1"
