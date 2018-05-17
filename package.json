@@ -10,7 +10,7 @@
     "umm:init": "umm-init",
     "umm:module:install": "umm-module-install",
     "umm:module:uninstall": "umm-module-uninstall",
-    "postinstall": "npm run --silent umm:module:install",
+    "postinstall": "npm run --silent umm:module:install && node ./scripts/postinstall.js",
     "postuninstall": "npm run --silent umm:module:uninstall"
   },
   "license": "Apache-2.0",
