@@ -1,0 +1,10 @@
+{
+    "name": "umm@firebase_core",
+    "references": [
+        "umm@parse_dotnet46"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
