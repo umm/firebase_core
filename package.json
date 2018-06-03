@@ -8,6 +8,7 @@
   },
   "scripts": {
     "umm:init": "umm-init",
+    "umm:generate_assembly_definition": "umm-generate_assembly_definition",
     "umm:module:install": "umm-module-install",
     "umm:module:uninstall": "umm-module-uninstall",
     "postinstall": "npm run --silent umm:module:install && node ./scripts/postinstall.js",
@@ -23,6 +24,7 @@
     "scripts"
   ],
   "dependencies": {
+    "@umm/parse_dotnet46": "umm-projects/parse_dotnet46#^1.0.0",
     "@umm/scripts": "umm-projects/scripts#^1.0.0"
   },
   "devDependencies": {}
