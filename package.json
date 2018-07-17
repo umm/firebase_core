@@ -2,9 +2,9 @@
   "name": "@umm/firebase_core",
   "version": "1.4.0",
   "description": "Firebase Unity SDK / Core",
-  "homepage": "https://github.com/umm-projects/firebase_core",
+  "homepage": "https://github.com/umm/firebase_core",
   "bugs": {
-    "url": "https://github.com/umm-projects/firebase_core/issues"
+    "url": "https://github.com/umm/firebase_core/issues"
   },
   "scripts": {
     "umm:init": "umm-init",
@@ -17,15 +17,15 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:umm-projects/firebase_core"
+    "url": "git@github.com:umm/firebase_core"
   },
   "files": [
     "Assets",
     "scripts"
   ],
   "dependencies": {
-    "@umm/parse_dotnet46": "umm-projects/parse_dotnet46#^1.0.0",
-    "@umm/scripts": "umm-projects/scripts#^1.0.0"
+    "@umm/parse_dotnet46": "umm/parse_dotnet46#^1.0.0",
+    "@umm/scripts": "umm/scripts#^1.0.0"
   },
   "devDependencies": {}
 }
