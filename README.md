@@ -6,7 +6,7 @@
 ## Install
 
 ```shell
-yarn add "umm-projects/firebase_core#^1.0.0"
+yarn add "umm/firebase_core#^1.0.0"
 ```
 
 ## Requirement
@@ -15,8 +15,8 @@ yarn add "umm-projects/firebase_core#^1.0.0"
 
 | Scripting Runtime Version | Module |
 | --- | --- |
-| .NET 3.5 | [Parse on .NET 3.5](https://github.com/umm-projects/parse_dotnet35) |
-| .NET 4.6 | [Parse on .NET 4.6](https://github.com/umm-projects/parse_dotnet46) |
+| .NET 3.5 | [Parse on .NET 3.5](https://github.com/umm/parse_dotnet35) |
+| .NET 4.6 | [Parse on .NET 4.6](https://github.com/umm/parse_dotnet46) |
 
 ## Docs
 
