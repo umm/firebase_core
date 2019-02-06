@@ -162,6 +162,33 @@ Support
 
 Release Notes
 -------------
+### 5.4.4
+  - Overview
+    - Fixed bugs in iOS/Android Resolver components, Realtime Database on
+      mobile, and Cloud Functions on Android; fixed a general iOS bug; and fixed
+      issues with Unity 5.6 and Unity 2018.3 and newer.
+  - Changes
+    - General (Android): Fixed packaging of AARs in the Android Resolver when
+      using Unity 2018 and a recent version of Gradle.
+    - General: Reduced auto-resolution frequency in iOS and Android Resolvers,
+      speeding up builds and reducing memory footprint.
+    - General: Fixed an issue with version number handling in iOS and Android
+      Resolvers.
+    - General (iOS): Fixed an issue that caused apps to crash when exiting the
+      app.
+    - General: Fixed parsing of Unity 5.6 metadata.
+    - General: Workaround for Unity 2018.3 and newer ignoring the "Any"
+      platform.
+    - Realtime Database (mobile): Fixed an issue where certain DataSnapshots
+      were missing data.
+    - Cloud Functions (Android): Fixed an issue with error handling.
+  - Known Issues
+    - The garbage collection race condition mentioned	in version 5.4.2 still
+      occurs in Firebase Auth, Database, Storage, and Instance ID. To work
+      around the issue until a fixed is released, keep a reference to the
+      Firebase object instance (for example, FirebaseAuth.DefaultInstance) to
+      prevent garbage collection.
+
 ### 5.4.3
   - Overview
     - Bug fix for Firebase Storage on iOS.
