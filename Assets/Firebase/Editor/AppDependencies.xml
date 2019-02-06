@@ -15,7 +15,7 @@ FirebaseApp iOS and Android Dependencies.
     </androidPackage>
     <androidPackage spec="com.google.firebase:firebase-app-unity:5.4.4">
       <repositories>
-        <repository>Assets/Firebase/m2repository</repository>
+        <repository>Assets/Modules/umm@firebase_core/Firebase/m2repository</repository>
       </repositories>
     </androidPackage>
   </androidPackages>
