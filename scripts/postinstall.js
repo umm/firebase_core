@@ -12,6 +12,7 @@ umm.libraries.synchronize(
   [
     'Plugins/Android*',
     'Firebase/Editor/generate_xml_from_google_services_json*',
+    'Firebase/Editor/network_request*',
     'Editor Default Resources*',
   ],
   {
